@@ -43,25 +43,6 @@ class IterTrait {
 };
 
 template <class TOut>
-class Iterator : public IterTrait<TOut> {
-   public:
-    Iterator(std::vector<TOut>& source)
-        : source{source}, current{source.begin()} {}
-
-    virtual std::optional<TOut> next() override {
-        if (current == source.end()) {
-            return {};
-        }
-
-        return *(current++);
-    }
-
-   private:
-    std::vector<TOut>& source;
-    typename std::vector<TOut>::iterator current;
-};
-
-template <class TOut>
 class FilterIterator : public IterTrait<TOut> {
    public:
     FilterIterator(IterTrait<TOut>& parent, std::function<bool(TOut)> predicate)

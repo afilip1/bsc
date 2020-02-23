@@ -1,7 +1,12 @@
 namespace bsc {
 
 template <class TOut>
-class Iterator;
+class VecAdapter;
+
+class StringAdapter;
+
+template <class K, class V>
+class MapAdapter;
 
 template <class TOut>
 class FilterIterator;
