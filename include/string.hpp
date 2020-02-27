@@ -54,4 +54,19 @@ class String : public std::string {
     StringAdapter iter() { return StringAdapter(*this); }
 };
 
+template <>
+template <>
+inline String IterTrait<String>::join(char delim) {
+    String joined;
+    auto maybe_next = this->next();
+    if (!maybe_next) return joined;
+    joined += *maybe_next;
+
+    while (true) {
+        auto maybe_next = this->next();
+        if (!maybe_next) return joined;
+        joined += delim + *maybe_next;
+    }
+}
+
 }  // namespace bsc

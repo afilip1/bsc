@@ -1,3 +1,5 @@
+#pragma once
+
 namespace bsc {
 
 template <class TOut>
@@ -19,5 +21,10 @@ class IterTrait;
 
 template <class T>
 class Vec;
+
+class String;
+
+template <class K, class V>
+class Map;
 
 }  // namespace bsc

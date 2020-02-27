@@ -40,6 +40,9 @@ class IterTrait {
             action(*maybe_next);
         }
     }
+
+    template <class TJoined, class TDelim>
+    TJoined join(TDelim delim);
 };
 
 template <class TOut>
